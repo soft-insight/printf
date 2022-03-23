@@ -22,8 +22,8 @@ combination of strings, integers and other different data types.
 
 # Compile #
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
-gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
+* gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+* gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 
 
 # FLOWCHART #
