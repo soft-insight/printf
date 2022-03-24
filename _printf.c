@@ -68,8 +68,10 @@ int _strlen(char *s)
 
 void _printf(const char *format, ...)
 {
-        int i = 0,len = 0, num;
-        char letra;
+        int i = 0, k, len = 0, num;
+ 	char letra;
+        char *str;
+	int leng;
 	char buffer[200];
 	char nstr[100];
         va_list arguments;
@@ -99,8 +101,17 @@ void _printf(const char *format, ...)
 					int_str(num, nstr);
 					/*write(1, &nstr, 4);*/
 					len = _addstr(buffer, nstr, len);
-
 					break;
+				case 's':
+                                        str = va_arg(arguments, char *);
+                                        leng = _strlen(str);
+                                        for (k = 0; k < leng; k++)
+					{
+						buffer[len] = str[k];
+						len++;
+					}
+                                               /* write(1, &str[k], 1);*/
+                                        break;
                       
                                 default:
                                         printf("Error, not valid specifier");
@@ -113,6 +124,6 @@ void _printf(const char *format, ...)
 }
 int main(void)
 {
-        _printf("a simple char = %c, and a number = %i \n", 'H', 8500);
+        _printf("a simple char = %c, and a number = %i, ans a string %s.\n", 'H', 8500, "new way ...");
 	return(0);
 }
