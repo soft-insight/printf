@@ -5,13 +5,29 @@
 #include <stdarg.h>
 
 
+int _addstr(char *buffer, char s[],int n)
+{
+	int x = n;
+	int y = 0;
+	
+	while(s[y] != '\0')
+	{	buffer[x] = s[y];
+		x++;
+		y++;
+	}
+	return(n + y);
+}
+
 int _strlen(char *s)
 {
 	int i;
 
 	i = 0;
+
 	while (s[i] != '\0')
+	{
 		i++;
+	}
 
 	return (i);
 }
@@ -31,8 +47,6 @@ int _strlen(char *s)
     } 
  }
 
-
-
  /* int_str:  convert n to characters in s */
  void int_str(int n, char s[])
  {
@@ -48,19 +62,15 @@ int _strlen(char *s)
          s[i++] = '-';
      s[i] = '\0';
      reverse(s);
+   
  }
-
-
-
-
 
 
 void _printf(const char *format, ...)
 {
-        int i = 0, k, num;
+        int i = 0,len = 0, num;
         char letra;
-	char *str;
-	int len;
+	char buffer[200];
 	char nstr[100];
         va_list arguments;
 
@@ -69,7 +79,10 @@ void _printf(const char *format, ...)
         while(format[i] != '\0')
         {
                 if (format[i] != '%')
-                        write(1, &format[i], 1);
+		{       /* write(1, &format[i], 1);*/
+			buffer[len] = format[i];
+			len++;
+		}
                 if (format[i] == '%')
                 {
                         i++;
@@ -77,28 +90,29 @@ void _printf(const char *format, ...)
                         {
                                 case 'c':
                                         letra = va_arg(arguments, int);
-                                        write(1, &letra, 1);
+                                        /*write(1, &letra, 1);*/
+					buffer[len] = letra;
+					len++;
 					break;
                                 case 'i':
 					num = va_arg(arguments, int);
 					int_str(num, nstr);
-					write(1, &nstr, 4);
+					/*write(1, &nstr, 4);*/
+					len = _addstr(buffer, nstr, len);
+
 					break;
-				case 's':
-					str = va_arg(arguments, char *);
-					len = _strlen(str);
-					for (k = 0; k < len; k++)
-						write(1, &str[k], 1);
-					break;
+                      
                                 default:
                                         printf("Error, not valid specifier");
                         }
                 }
                 i++;
         }
+	buffer[len] = '\0';
+	write(1, &buffer, len);
 }
 int main(void)
 {
-        _printf("a simple char = %c, and a number = %i, and a string = %s.\n", 'H', 8500, "a new coding");
+        _printf("a simple char = %c, and a number = %i \n", 'H', 8500);
 	return(0);
 }
