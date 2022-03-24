@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 
-char *_printString(char arguments);
+
+char *_printString(va_list arguments);
 
 #endif
