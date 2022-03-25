@@ -102,11 +102,11 @@ int print_str(char str[], char *buffer, int len)
 int _printf(const char *format, ...)
 {
         int i = 0, num;
-	int len;
+	int len = 0;
  	char letter;
         char *str;
-	char buffer[200];
-	char nstr[100];
+	char buffer[sizeof(char) * 512];
+	char nstr[64];
         va_list arguments;
 
         va_start(arguments, format);
@@ -151,9 +151,5 @@ int _printf(const char *format, ...)
 	buffer[len] = '\0';
 	write(1, &buffer, len);
 	va_end(arguments);
-<<<<<<< HEAD
-
-=======
->>>>>>> 5f8c04cf8f247d3c1dae94b7509503fe08157f52
 	return (len);
 }
