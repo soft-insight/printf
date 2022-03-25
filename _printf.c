@@ -31,6 +31,28 @@ int _strlen(char *s)
 
 	return (i);
 }
+
+/**
+ *
+ *
+ */
+
+int print_str(char str[], char *buffer, int len)
+{
+	int leng, k;
+	leng = _strlen(str);
+
+	for (k = 0; k < leng; k++)
+	{
+		buffer[len] = str[k];
+		len++;
+	}
+	return (len);
+
+//	printf("the length of the string %d\n", len);
+}
+
+
  /* reverse:  reverse string s in place */
  void reverse(char str[])
 {
@@ -50,7 +72,8 @@ int _strlen(char *s)
  /* int_str:  convert n to characters in s */
  void int_str(int n, char s[])
  {
-     int i, sign;
+	 int i, sign;
+	 //num = va_arg(arguments, int);
 
      if ((sign = n) < 0)  
          n = -n;          /* make n positive */
@@ -68,7 +91,8 @@ int _strlen(char *s)
 
 void _printf(const char *format, ...)
 {
-        int i = 0, k, len = 0, num;
+        int i = 0, num;
+	int len;
  	char letra;
         char *str;
 	int leng;
@@ -104,12 +128,15 @@ void _printf(const char *format, ...)
 					break;
 				case 's':
                                         str = va_arg(arguments, char *);
-                                        leng = _strlen(str);
-                                        for (k = 0; k < leng; k++)
+                                        //leng = _strlen(str);
+					print_str(str, buffer, len);
+					len = print_str(str, buffer, len);
+
+                                        /*for (k = 0; k < leng; k++)
 					{
 						buffer[len] = str[k];
 						len++;
-					}
+					} */
                                                /* write(1, &str[k], 1);*/
                                         break;
                       
@@ -124,6 +151,6 @@ void _printf(const char *format, ...)
 }
 int main(void)
 {
-        _printf("a simple char = %c, and a number = %i, ans a string %s.\n", 'H', 8500, "new way ...");
+        _printf("a char = %c, a number = %i, and a string: %s.\n", 'H', 8500, "new way ...");
 	return(0);
 }
