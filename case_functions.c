@@ -98,3 +98,19 @@ int print_str(char *str, char buffer[], int len)
      reverse(s);
 
  }
+
+ void uint_str(unsigned int n, char s[])
+ {
+         int i;
+         /* num = va_arg(arguments, int);*/
+
+     i = 0;
+     do {       /* generate digits in reverse order */
+         s[i++] = n % 10 + '0';   /* get next digit */
+     } while ((n /= 10) > 0);     /* delete it */
+  
+     s[i] = '\0';
+     reverse(s);
+
+ }
+

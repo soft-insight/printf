@@ -103,11 +103,15 @@ int _printf(const char *format, ...)
 {
         int i = 0, num;
 	int len = 0;
+	unsigned int ui;
  	char letter;
         char *str;
+	char ustr[64];
+
+	char buffer[sizeof(char) * 512];
+	char nstr[64];
 	
-	char buffer[sizeof(char)*256];
-	char nstr[32];
+
         va_list arguments;
 
         va_start(arguments, format);
@@ -136,6 +140,12 @@ int _printf(const char *format, ...)
 					/*write(1, &nstr, 4);*/
 					len = _addstr(buffer, nstr, len);
 					break;
+				case 'd':
+					num = va_arg(arguments, int);
+					int_str(num, nstr);
+					/*write(1, &nstr, 4);*/
+					len = _addstr(buffer, nstr, len);
+					break;
 				case 's':
                                         str = malloc(sizeof(char)*128);
 				       	str = va_arg(arguments, char *);
@@ -143,7 +153,16 @@ int _printf(const char *format, ...)
 					len = _addstr(buffer, str, len);
                                         /* write(1, &str[k], 1);*/
                                         break;
-	
+				case 'u':
+					ui = va_arg(arguments, unsigned int);
+					uint_str(ui, ustr);
+					len = _addstr(buffer, ustr, len);
+					break;
+				case '%':
+					buffer[len] = '%';
+					len++;
+					break;
+				
                                 default:
                                         printf("Error, not valid specifier");
                         }
@@ -153,7 +172,6 @@ int _printf(const char *format, ...)
 	buffer[len] = '\0';
 	write(1, &buffer, len);
 	va_end(arguments);
-
 
 	return (len);
 }
