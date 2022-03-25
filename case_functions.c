@@ -49,8 +49,6 @@ int print_str(char str[], char *buffer, int len)
                 len++;
         }
         return (len);
-
-//      printf("the length of the string %d\n", len);
 }
 
 
@@ -74,7 +72,7 @@ int print_str(char str[], char *buffer, int len)
  void int_str(int n, char s[])
  {
          int i, sign;
-         //num = va_arg(arguments, int);
+         /* num = va_arg(arguments, int);*/
 
      if ((sign = n) < 0)
          n = -n;          /* make n positive */

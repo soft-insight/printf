@@ -99,13 +99,12 @@ int print_str(char str[], char *buffer, int len)
  */
 
 
-void _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
         int i = 0, num;
 	int len;
  	char letra;
         char *str;
-	int leng;
 	char buffer[200];
 	char nstr[100];
         va_list arguments;
@@ -151,9 +150,7 @@ void _printf(const char *format, ...)
         }
 	buffer[len] = '\0';
 	write(1, &buffer, len);
+
+	return (len);
 }
-int main(void)
-{
-        _printf("a char = %c, a number = %i, and a string: %s.\n", 'H', 8500, "new way");
-	return(0);
-}
+
