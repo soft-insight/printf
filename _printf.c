@@ -135,6 +135,12 @@ int _printf(const char *format, ...)
 					/*write(1, &nstr, 4);*/
 					len = _addstr(buffer, nstr, len);
 					break;
+				case 'd':
+					num = va_arg(arguments, int);
+					int_str(num, nstr);
+					/*write(1, &nstr, 4);*/
+					len = _addstr(buffer, nstr, len);
+					break;
 				case 's':
                                         str = va_arg(arguments, char *);
 					print_str(str, buffer, len);
