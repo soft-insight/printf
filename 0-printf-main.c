@@ -10,7 +10,7 @@ int main(void)
         int lent2;
         lent = _printf("Let's try to printf a simple sentence.\n");
         lent2 = printf("Let's try to printf a simple sentence.\n");
-        
+
         lent = _printf("a char = %c, a number = %i, and a string: %s.\n", 'H', 8500, "new way 123");
         _printf("lent = %i and lent2 = %i\n", lent, lent2);
 
@@ -86,8 +86,6 @@ int main(void)
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n"); 
+    printf("Unknown:[%r]\n");
     return (0);
 }
-
-
