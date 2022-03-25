@@ -105,8 +105,14 @@ int _printf(const char *format, ...)
 	int len = 0;
  	char letter;
         char *str;
+<<<<<<< HEAD
 	char buffer[sizeof(char) * 512];
 	char nstr[64];
+=======
+	
+	char buffer[sizeof(char)*256];
+	char nstr[32];
+>>>>>>> 03f8ecce64647431782d3e5941e566881f633d12
         va_list arguments;
 
         va_start(arguments, format);
@@ -142,9 +148,10 @@ int _printf(const char *format, ...)
 					len = _addstr(buffer, nstr, len);
 					break;
 				case 's':
-                                        str = va_arg(arguments, char *);
-					print_str(str, buffer, len);
-					len = print_str(str, buffer, len);
+                                        str = malloc(sizeof(char)*128);
+				       	str = va_arg(arguments, char *);
+					/*print_str(str, buffer, len);*/
+					len = _addstr(buffer, str, len);
                                         /* write(1, &str[k], 1);*/
                                         break;
 

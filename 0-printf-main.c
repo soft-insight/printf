@@ -5,6 +5,7 @@
 /*
 int main(void)
 {
+<<<<<<< HEAD
 	int len;
 	int len2;
 
@@ -13,7 +14,22 @@ int main(void)
 
         _printf("a char = %c, a number = %i, and a string: %s.\n", 'H', 8500, "new way");
 	_printf("lent = %i and lent2 = %i", len, len2);
+=======
+	int lent;
+	int lent2;
+	lent = _printf("Let's try to printf a simple sentence.\n");
+    	lent2 = printf("Let's try to printf a simple sentence.\n");
+<<<<<<< HEAD
+*/
+        _printf("a char = %c, a number = %i, and a string: %s.\n", 'H', 8500, "new way 123");
+/*	_printf("lent = %i and lent2 = %i", lent, lent2);*/
+=======
+
+        _printf("a char = %c, a number = %i, and a string: %s.\n", 'H', 8500, "new way");
+>>>>>>> 07f314cf961965ad74f32a211e5a319a3fced811
+>>>>>>> 03f8ecce64647431782d3e5941e566881f633d12
 	return(0);
+
 }
 */
 
