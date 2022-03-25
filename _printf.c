@@ -18,7 +18,6 @@ int _printf(const char *format, ...)
 
 	char buffer[sizeof(char) * 512];
 	char nstr[64];
-	
 
         va_list arguments;
 
@@ -55,7 +54,7 @@ int _printf(const char *format, ...)
 					len = _addstr(buffer, nstr, len);
 					break;
 				case 's':
-                                       
+
 				       	str = va_arg(arguments, char *);
 					/*print_str(str, buffer, len);*/
 					len = _addstr(buffer, str, len);
@@ -75,7 +74,7 @@ int _printf(const char *format, ...)
 					buffer[len] = '%';
 					len++;
 					break;
-				
+
                                 default:
 					--i;
 					buffer[len] = format[i];
