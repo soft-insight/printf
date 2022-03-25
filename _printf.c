@@ -102,7 +102,7 @@ int print_str(char str[], char *buffer, int len)
 int _printf(const char *format, ...)
 {
         int i = 0, num;
-	int len;
+	int len = 0;
  	char letter;
         char *str;
 	
@@ -143,7 +143,7 @@ int _printf(const char *format, ...)
 					len = _addstr(buffer, str, len);
                                         /* write(1, &str[k], 1);*/
                                         break;
-
+	
                                 default:
                                         printf("Error, not valid specifier");
                         }
@@ -153,9 +153,7 @@ int _printf(const char *format, ...)
 	buffer[len] = '\0';
 	write(1, &buffer, len);
 	va_end(arguments);
-<<<<<<< HEAD
 
-=======
->>>>>>> 5f8c04cf8f247d3c1dae94b7509503fe08157f52
+
 	return (len);
 }
