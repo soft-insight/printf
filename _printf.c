@@ -150,7 +150,7 @@ int _printf(const char *format, ...)
         }
 	buffer[len] = '\0';
 	write(1, &buffer, len);
+	va_end(arguments);
 
 	return (len);
 }
-

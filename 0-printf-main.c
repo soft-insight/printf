@@ -5,11 +5,11 @@
 
 int main(void)
 {
-/*	int lent;
+	int lent;
 	int lent2;
 	lent = _printf("Let's try to printf a simple sentence.\n");
     	lent2 = printf("Let's try to printf a simple sentence.\n");
-*/
+
         _printf("a char = %c, a number = %i, and a string: %s.\n", 'H', 8500, "new way");
 	return(0);
 }
