@@ -147,7 +147,7 @@ int _printf(const char *format, ...)
 					len = _addstr(buffer, nstr, len);
 					break;
 				case 's':
-                                        str = malloc(sizeof(char)*128);
+                                       
 				       	str = va_arg(arguments, char *);
 					/*print_str(str, buffer, len);*/
 					len = _addstr(buffer, str, len);
@@ -155,7 +155,12 @@ int _printf(const char *format, ...)
                                         break;
 				case 'u':
 					ui = va_arg(arguments, unsigned int);
-					uint_str(ui, ustr);
+					uint_str(ui, ustr, 10);
+					len = _addstr(buffer, ustr, len);
+					break;
+				case 'o':
+					ui = va_arg(arguments, unsigned int);
+					uint_str(ui, ustr, 8);
 					len = _addstr(buffer, ustr, len);
 					break;
 				case '%':

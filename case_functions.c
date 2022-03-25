@@ -99,15 +99,16 @@ int print_str(char *str, char buffer[], int len)
 
  }
 
- void uint_str(unsigned int n, char s[])
+
+ void uint_str(unsigned int n, char s[],unsigned int base)
  {
          int i;
          /* num = va_arg(arguments, int);*/
 
      i = 0;
      do {       /* generate digits in reverse order */
-         s[i++] = n % 10 + '0';   /* get next digit */
-     } while ((n /= 10) > 0);     /* delete it */
+         s[i++] = n % base + '0';   /* get next digit */
+     } while ((n /= base) > 0);     /* delete it */
   
      s[i] = '\0';
      reverse(s);

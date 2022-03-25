@@ -17,7 +17,7 @@ int _strlen(char *s);
 int print_str(char str[], char *buffer, int len);
 void reverse(char str[]);
 void int_str(int n, char s[]);
-void uint_str(unsigned int n, char s[]);
+void uint_str(unsigned int n, char s[], unsigned int base);
 
 
 #endif
