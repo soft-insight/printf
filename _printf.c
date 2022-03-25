@@ -1,4 +1,4 @@
-#include <limits.h> 
+#include <limits.h>
 #include <stdio.h>
 #include <unistd.h> /* POSIX */
 #include <stdlib.h>
@@ -10,7 +10,7 @@ int _addstr(char *buffer, char s[],int n)
 {
 	int x = n;
 	int y = 0;
-	
+
 	while(s[y] != '\0')
 	{	buffer[x] = s[y];
 		x++;
@@ -63,17 +63,17 @@ int print_str(char str[], char *buffer, int len)
 
 /* void reverse(char str[])
 {
-    int i, len, temp;  
-    len = _strlen(str); */ /* use strlen() to get the length of str string*/  
-      
-    /* use for loop to iterate the string*/   
-/*    for (i = 0; i < len/2; i++)  
+    int i, len, temp;
+    len = _strlen(str); */ /* use strlen() to get the length of str string*/
+
+    /* use for loop to iterate the string*/
+/*    for (i = 0; i < len/2; i++)
     {  */
-        /* temp variable use to temporary hold the string*/  
-/*        temp = str[i];  
-        str[i] = str[len - i - 1];  
-        str[len - i - 1] = temp;  
-    } 
+        /* temp variable use to temporary hold the string*/
+/*        temp = str[i];
+        str[i] = str[len - i - 1];
+        str[len - i - 1] = temp;
+    }
  }
 */
 
@@ -84,18 +84,18 @@ int print_str(char str[], char *buffer, int len)
 	 int i, sign;
 	 //num = va_arg(arguments, int);
 
-     if ((sign = n) < 0)  
-         n = -n;          // make n positive 
+     if ((sign = n) < 0)
+         n = -n;          // make n positive
      i = 0;
-     do {       // generate digits in reverse order 
-         s[i++] = n % 10 + '0';   // get next digit 
-     } while ((n /= 10) > 0);     // delete it 
+     do {       // generate digits in reverse order
+         s[i++] = n % 10 + '0';   // get next digit
+     } while ((n /= 10) > 0);     // delete it
      if (sign < 0)
          s[i++] = '-';
      s[i] = '\0';
      reverse(s);
-   
- } 
+
+ }
  */
 
 
@@ -103,7 +103,7 @@ int _printf(const char *format, ...)
 {
         int i = 0, num;
 	int len;
- 	char letra;
+ 	char letter;
         char *str;
 	char buffer[200];
 	char nstr[100];
@@ -124,9 +124,9 @@ int _printf(const char *format, ...)
                         switch (format[i])
                         {
                                 case 'c':
-                                        letra = va_arg(arguments, int);
+                                        letter = va_arg(arguments, int);
                                         /*write(1, &letra, 1);*/
-					buffer[len] = letra;
+					buffer[len] = letter;
 					len++;
 					break;
                                 case 'i':
@@ -141,7 +141,7 @@ int _printf(const char *format, ...)
 					len = print_str(str, buffer, len);
                                         /* write(1, &str[k], 1);*/
                                         break;
-                      
+
                                 default:
                                         printf("Error, not valid specifier");
                         }
@@ -151,6 +151,9 @@ int _printf(const char *format, ...)
 	buffer[len] = '\0';
 	write(1, &buffer, len);
 	va_end(arguments);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5f8c04cf8f247d3c1dae94b7509503fe08157f52
 	return (len);
 }
