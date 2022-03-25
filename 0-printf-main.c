@@ -10,8 +10,10 @@ int main(void)
 	lent = _printf("Let's try to printf a simple sentence.\n");
     	lent2 = printf("Let's try to printf a simple sentence.\n");
 */
-        _printf("a char = %c, a number = %i, and a string: %s.\n", 'H', 8500, "new way");
+        _printf("a char = %c, a number = %i, and a string: %s.\n", 'H', 8500, "new way 123");
+/*	_printf("lent = %i and lent2 = %i", lent, lent2);*/
 	return(0);
+
 }
 
 

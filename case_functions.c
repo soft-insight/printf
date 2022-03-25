@@ -5,8 +5,13 @@
 #include <stdarg.h>
 #include "main.h"
 
-
-int _addstr(char *buffer, char s[],int n)
+/*_addstr - add a string to a buffer
+ *@buffer : pointer to a buffer
+ *@s : pointer to string
+ *@n : size of the buffer
+ *Return : new size of buffer
+ */
+int _addstr(char buffer[], char s[],int n)
 {
         int x = n;
         int y = 0;
@@ -19,6 +24,10 @@ int _addstr(char *buffer, char s[],int n)
         return(n + y);
 }
 
+/*_strlen : find the size of a string
+ *@s : pointer to string
+ *Return : length of string
+ */
 int _strlen(char *s)
 {
         int i;
@@ -33,12 +42,12 @@ int _strlen(char *s)
         return (i);
 }
 
-/**
+/*
  *
  *
  */
 
-int print_str(char str[], char *buffer, int len)
+int print_str(char *str, char buffer[], int len)
 {
         int leng, k;
         leng = _strlen(str);
@@ -68,7 +77,10 @@ int print_str(char str[], char *buffer, int len)
     }
  }
 
- /* int_str:  convert n to characters in s */
+ /*int_str - convert a integer to string
+  *@n : integer
+  *@s : pointer to string
+  */
  void int_str(int n, char s[])
  {
          int i, sign;
