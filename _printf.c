@@ -153,5 +153,9 @@ int _printf(const char *format, ...)
 	buffer[len] = '\0';
 	write(1, &buffer, len);
 	va_end(arguments);
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5f8c04cf8f247d3c1dae94b7509503fe08157f52
 	return (len);
 }
