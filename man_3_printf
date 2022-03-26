@@ -1,0 +1,141 @@
+.\"TITLE: 0x11. C - printf
+.\"
+.TH	MAN_3_PRINTF	"2022 03 25"   "Version 0.1" "man page _printf project"
+
+.SH NAME
+.SH ""
+
+.B _printf
+- Built recreation of printf.
+
+.SH SYNOPSIS
+.SH ""
+
+_printf(): In this project you can find a small version of "printf" that can handle \
+the following format specification: c, s, %, d and i. This version cannot handle \
+flag characters, field width, precision and length modifiers. Also, a "main.h" file \
+was created.
+
+_printf() function takes 2 arguments: a character pointer to a string: format, \
+and a 'variable arguments list': arg_list. _printf() loops through the format \
+string searching for a specification, which is indicated with the '%' \
+symbol. If found, the get_function() loops through an array of structs \
+(contianing specification "character" and function pairs) to find the specific \
+function that is matched with the given element specific from the format \
+string, and then returns a pointer to that paired function. _printf() uses\
+the pointer to that specific function to call the element specific function on the\
+next queued argument from the arg_list. Each specific function writes a character\
+one at a time as determined from the value in arg_lis.
+
+This project _printf () customized was developed by Holberton Students of cohort 16,\
+Joana Casallas and Alex Arevalo.
+
+This file shows how _printf works, and how to design the proper formatting specification.
+
+.SS Compile
+
+.PP
+.RS
+#include "main.h"
+
+$ gcc -Wall -Werror -Wextra -pedantic *.c
+
+.RE
+
+.SS Usage
+.RS
+
+int _printf(const char *format, ...);
+
+format refers to a string with any number of specifiers "letter" followed by a '%' \
+symbol. i.e. "My name is %s and I am %d years old". '...' refers to a list \
+of variadic (variable arguments in C Language), which can be any number of \
+variables of any type. With the above example string, appropriate arguments \
+could be "Edwin Abbott Abbott", 179. These examples together should be called \
+as in the following example:
+
+.SS Examples:
+.RS
+
+Basic String: _printf("%s Holberton", "Hello");` Output: Hello Holberton \
+Print integers: _printf("The current year is[%i]", 2021, );` Output: The curret year us 2021 \
+
+.PP
+.SH DESCRIPTION
+.SH ""
+
+The function _printf() writes output to standard output. It writes the output \
+under the control of a format string that specifies how subsequent arguments \
+are converted for output.
+
+.SS Return Value
+
+Upon successful return, these functions return the number of characters \
+printed, which exclude the terminating null byte ('\0').
+
+.SH THE FLAG CHARACTERS
+.SH ""
+.IT
+.B c
+- The integer or char argument converts to an unsigned char, and the resulting \
+character is written.
+
+.IT
+.B s
+- The argument will be a literal string. No special provisions are made for \
+multibyte characters.The behavior of printf with the s conversion specifier \
+is undefined if the argument value is not a pointer to a literal string. \
+Characters from the literal string array are written up to, but not including, \
+the terminating null byte ('\0').
+
+.IT
+.B %
+- A % character is written and no argument is converted. The complete \
+conversion specification is '%%'.
+
+.IT
+.B b
+- The unsigned int argument is converted to binary.
+
+.IT
+.B d, i
+- The int argument is converted to signed decimal notation.
+
+.IT
+.B p
+- The pointer is printed in hexidecimal format preceded by '0x'.
+
+.IT
+.B r, R
+- 'r' prints string in reverse. 'R' prints encrypted rot13.
+
+.IT
+
+.B o, u, x, X
+- The unsigned int argument is converted to unsigned octal (o), unsigned \
+decimal (u), or unsigned hexidecimal notation (x or X); the letters abcdef are \
+used for x conversion and the letters ABCDEF for X conversion.
+
+.IT
+.B S
+- Prints ascii characters #32 - #127 as they appear in the argument string. \
+All other ascii characters are converted to hexidecimal, then written to \
+standard output.
+
+.RE
+
+.PP
+
+.SH "AUTHOR"
+.SH ""
+
+Jaime Rodrïguez		<@holbertonschool.com>
+Jesús Macías		<@holbertonschool.com>
+Marco Antonio Ordóñez 	<@holbertonschool.com>
+
+.PP
+
+.SH "SEE ALSO"
+.SH ""
+
+.BR printf(1), malloc(3), puts(3), stdarg(3), write(2)
