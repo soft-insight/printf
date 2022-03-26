@@ -109,9 +109,8 @@ int print_str(char *str, char buffer[], int len)
      do {       /* generate digits in reverse order */
          s[i++] = n % base + '0';   /* get next digit */
      } while ((n /= base) > 0);     /* delete it */
-  
+
      s[i] = '\0';
      reverse(s);
 
  }
-
