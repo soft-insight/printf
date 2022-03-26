@@ -12,14 +12,12 @@
 .SH ""
 
 _printf(): In this project you can find a small version of "printf" that can handle \
-the following format specification: c, s, %, d and i. This version cannot handle \
-flag characters, field width, precision and length modifiers. Also, a "main.h" file \
-was created.
+
 
 _printf() function takes 2 arguments: a character pointer to a string: format, \
 and a 'variable arguments list': arg_list. _printf() loops through the format \
 string searching for a specification, which is indicated with the '%' \
-symbol. If found, the get_function() loops through an array of structs \
+symbol. If found, the case_functions() loops through an array of structs \
 (contianing specification "character" and function pairs) to find the specific \
 function that is matched with the given element specific from the format \
 string, and then returns a pointer to that paired function. _printf() uses\
@@ -27,8 +25,8 @@ the pointer to that specific function to call the element specific function on t
 next queued argument from the arg_list. Each specific function writes a character\
 one at a time as determined from the value in arg_lis.
 
-This project _printf () customized was developed by Holberton Students of cohort 16,\
-Joana Casallas and Alex Arevalo.
+This project _printf () customized was developed by Holberton Students of cohort 17,\
+Jaime Rodríguez, Jesús Macías y Marco Antonio Ordóñez.
 
 This file shows how _printf works, and how to design the proper formatting specification.
 
@@ -58,7 +56,7 @@ as in the following example:
 .RS
 
 Basic String: _printf("%s Holberton", "Hello");` Output: Hello Holberton \
-Print integers: _printf("The current year is[%i]", 2021, );` Output: The curret year us 2021 \
+Print integers: _printf("The current year is[%i]", 2022, );` Output: The curret year us 2022 \
 
 .PP
 .SH DESCRIPTION
@@ -91,7 +89,7 @@ the terminating null byte ('\0').
 .IT
 .B %
 - A % character is written and no argument is converted. The complete \
-conversion specification is '%%'.
+conversion specification is '%'.
 
 .IT
 .B b
@@ -138,4 +136,4 @@ Marco Antonio Ordóñez 	<@holbertonschool.com>
 .SH "SEE ALSO"
 .SH ""
 
-.BR printf(1), malloc(3), puts(3), stdarg(3), write(2)
+.BR 
