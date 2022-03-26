@@ -15,6 +15,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, num;
+	/*int adrr;*/
 	int len = 0;
 	unsigned int ui;
 	char letter;
@@ -78,7 +79,17 @@ int _printf(const char *format, ...)
 			buffer[len] = '%';
 			len++;
 			break;
-
+		case 'b':
+			ui = va_arg(arguments, unsigned int);
+			uint_str(ui, ustr, 2);
+			len = _addstr(buffer, ustr, len);
+			break;
+	/*	case 'p':
+			adrr = (unsigned int)&va_arg(arguments, int *);
+			uint_str(adrr, ustr, 10);
+			len = _addstr(buffer, ustr, len);
+			break;
+	*/
 		default:
 			--i;
 			buffer[len] = format[i];
