@@ -95,7 +95,7 @@ int _printf(const char *format, ...)
 					break;
 
 				case 'p':
-					adr = va_arg (arguments, long int *);
+					adr = va_arg(arguments, long int *);
 					adrr = (uintptr_t)adr;
 					uint_str2(adrr, ustr, 16);
 					len = _addstr(buffer, ustr, len);
@@ -109,7 +109,6 @@ int _printf(const char *format, ...)
 
 				case '0':
 					return (-1);
-					break;
 
 				default:
 					--i;
