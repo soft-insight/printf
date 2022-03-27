@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	char *str;
 	char ustr[64];
 
-	char buffer[sizeof(char) * 1024];
+	char buffer[sizeof(char) * 2048];
 	char nstr[64];
 
 	va_list arguments;
@@ -68,6 +68,8 @@ int _printf(const char *format, ...)
 			break;
 		case 's':
 			str = va_arg(arguments, char *);
+			if (str == NULL)
+				return(-1);
 			/*print_str(str, buffer, len);*/
 			len = _addstr(buffer, str, len);
 			/* write(1, &str[k], 1);*/
