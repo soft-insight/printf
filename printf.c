@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0, num;
 	uintptr_t adrr;
-	char *adr;
+	long int *adr;
 	int len = 0;
 	unsigned int ui;
 	char letter;
@@ -89,9 +89,9 @@ int _printf(const char *format, ...)
 			len = _addstr(buffer, ustr, len);
 			break;
 		case 'p':
-			adr = va_arg(arguments, char *);
+			adr = va_arg(arguments,long int *);
 			adrr = (uintptr_t)adr;
-			uint_str(adrr, ustr, 10);
+			uint_str2(adrr, ustr, 16);
 			len = _addstr(buffer, ustr, len);
 			break;
 		case 'x':
