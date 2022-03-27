@@ -104,12 +104,12 @@ int _printf(const char *format, ...)
 			uint_str(ui, ustr, 16);
 			len = _addstr(buffer, ustr, len);
 			break;
-	/*	case 'r':
-			str = va_arg(arguments, char *);
-			reverse(str);
-			len = _addstr(buffer, str, len);
-			break;
-	*/
+
+		 case '0':
+                        --i;
+                        buffer[len] = format[i];
+                        len++;
+                        break;
 	
 		default:
 			--i;
