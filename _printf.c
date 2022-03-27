@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 
 	while (format[i] != '\0')
 	{
-	if ((format[i] != '%') & format[i] != '\')
+	if (format[i] != '%')
 	{
 		buffer[len] = format[i];
 		len++;
@@ -92,6 +92,17 @@ int _printf(const char *format, ...)
 			uint_str(adrr, ustr, 10);
 			len = _addstr(buffer, ustr, len);
 			break;
+		case 'x':
+			ui = va_arg(arguments, unsigned int);
+			uint_str(ui, ustr, 16);
+			len = _addstr(buffer, ustr, len);
+			break;
+	/*	case 'r':
+			str = va_arg(arguments, char *);
+			reverse(str);
+			len = _addstr(buffer, str, len);
+			break;
+	*/
 	
 		default:
 			--i;

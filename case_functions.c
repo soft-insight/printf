@@ -64,16 +64,16 @@ int print_str(char *str, char buffer[], int len)
  /* reverse:  reverse string s in place */
  void reverse(char str[])
 {
-    int i, len, temp;
-    len = _strlen(str); /* use strlen() to get the length of str string*/
+    int i, j, temp;
+    j = _strlen(str); /* use strlen() to get the length of str string*/
 
     /* use for loop to iterate the string*/
-    for (i = 0; i < len/2; i++)
+    for (i = 0; i < j/2; i++)
     {
         /* temp variable use to temporary hold the string*/
         temp = str[i];
-        str[i] = str[len - i - 1];
-        str[len - i - 1] = temp;
+        str[i] = str[j - i - 1];
+        str[j - i - 1] = temp;
     }
  }
 
@@ -101,16 +101,30 @@ int print_str(char *str, char buffer[], int len)
 
 
  void uint_str(unsigned int n, char s[],unsigned int base)
- {
+ {	
          int i;
          /* num = va_arg(arguments, int);*/
-
-     i = 0;
-     do {       /* generate digits in reverse order */
-         s[i++] = n % base + '0';   /* get next digit */
-     } while ((n /= base) > 0);     /* delete it */
-
+	
+	i = 0;
+          
+     	do {       /* generate digits in reverse order */
+		
+		if(n % base < 10)
+		{
+                        s[i++] = n % base + '0';   /* get next digit */
+		}else
+		{
+			s[i++] = n % base - 10 + 'a';   /* get next digit */
+		}
+		
+     	} while ((n /= base) > 0);     /* delete it */
+	
+	
+		
+	
+	
      s[i] = '\0';
      reverse(s);
-
+	
  }
+
