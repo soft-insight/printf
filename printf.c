@@ -70,8 +70,8 @@ int _printf(const char *format, ...)
 			str = va_arg(arguments, char *);
 			if (str == NULL)
 				str == "(null)";
-			print_str(str, buffer, len);
-			/* len = _addstr(buffer, str, len); */
+			/* print_str(str, buffer, len); */
+			len = _addstr(buffer, str, len);
 			/* write(1, &str[k], 1);*/
 			break;
 		case 'u':
