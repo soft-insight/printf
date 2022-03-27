@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	char *str;
 	char ustr[64];
 
-	char buffer[sizeof(char) * 512];
+	char buffer[sizeof(char) * 1024];
 	char nstr[64];
 
 	va_list arguments;
