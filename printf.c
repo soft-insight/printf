@@ -33,7 +33,9 @@ int _printf(const char *format, ...)
 
 	while (format[i] != '\0')
 	{
-	if (format[i] != '%')
+
+	if (format[i] != '%') 
+
 	{
 		buffer[len] = format[i];
 		len++;
@@ -45,27 +47,27 @@ int _printf(const char *format, ...)
 		{
 		case 'c':
 			letter = va_arg(arguments, int);
-/*write(1, &letra, 1);*/
+			/*write(1, &letra, 1);*/
 			buffer[len] = letter;
 			len++;
 			break;
 		case 'i':
 			num = va_arg(arguments, int);
 			int_str(num, nstr);
-/*write(1, &nstr, 4);*/
+			/*write(1, &nstr, 4);*/
 			len = _addstr(buffer, nstr, len);
 			break;
 		case 'd':
 			num = va_arg(arguments, int);
 			int_str(num, nstr);
-/*write(1, &nstr, 4);*/
+			/*write(1, &nstr, 4);*/
 			len = _addstr(buffer, nstr, len);
 			break;
 		case 's':
 			str = va_arg(arguments, char *);
-/*print_str(str, buffer, len);*/
+			/*print_str(str, buffer, len);*/
 			len = _addstr(buffer, str, len);
-/* write(1, &str[k], 1);*/
+			/* write(1, &str[k], 1);*/
 			break;
 		case 'u':
 			ui = va_arg(arguments, unsigned int);
@@ -112,8 +114,8 @@ int _printf(const char *format, ...)
 	}
 	i++;
 }
-buffer[len] = '\0';
-write(1, &buffer, len);
-va_end(arguments);
-return (len);
+	buffer[len] = '\0';
+	write(1, &buffer, len);
+	va_end(arguments);
+	return (len);
 }
