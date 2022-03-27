@@ -3,6 +3,7 @@
 #include <unistd.h> /* POSIX */
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdint.h>
 #include "main.h"
 
 /**
@@ -15,7 +16,8 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, num;
-	/*int adrr;*/
+	uintptr_t adrr;
+	char *adr;
 	int len = 0;
 	unsigned int ui;
 	char letter;
@@ -31,7 +33,7 @@ int _printf(const char *format, ...)
 
 	while (format[i] != '\0')
 	{
-	if (format[i] != '%')
+	if ((format[i] != '%') & format[i] != '\')
 	{
 		buffer[len] = format[i];
 		len++;
@@ -84,12 +86,13 @@ int _printf(const char *format, ...)
 			uint_str(ui, ustr, 2);
 			len = _addstr(buffer, ustr, len);
 			break;
-	/*	case 'p':
-			adrr = (unsigned int)&va_arg(arguments, int *);
+		case 'p':
+			adr = va_arg(arguments, char *);
+			adrr = (uintptr_t)adr;
 			uint_str(adrr, ustr, 10);
 			len = _addstr(buffer, ustr, len);
 			break;
-	*/
+	
 		default:
 			--i;
 			buffer[len] = format[i];
