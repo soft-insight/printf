@@ -81,7 +81,7 @@ int print_str(char *str, char buffer[], int len)
   *@n : integer
   *@s : pointer to string
   */
- void int_str(int n, char s[])
+ void int_str(long int n, char s[])
  {
          int i, sign;
          /* num = va_arg(arguments, int);*/

@@ -15,7 +15,8 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, num;
+	int i = 0;
+	long int num;
 	uintptr_t adrr;
 	long int *adr;
 	int len = 0;
@@ -104,26 +105,21 @@ int _printf(const char *format, ...)
 			uint_str(ui, ustr, 16);
 			len = _addstr(buffer, ustr, len);
 			break;
-<<<<<<< HEAD
 		case 'X':
 			ui = va_arg(arguments, unsigned int);
                         uint_str3(ui, ustr, 16);
                         len = _addstr(buffer, ustr, len);
                         break;
-
-	/*	case 'r':
+/*		case 'r':
 			str = va_arg(arguments, char *);
 			reverse(str);
 			len = _addstr(buffer, str, len);
 			break;
-	*/
-=======
-		case '0':
+*/		case '0':
                         --i;
                         buffer[len] = format[i];
                         len++;
                         break;
->>>>>>> 71224634cc38d8c9fcdf33d1c0fe51ff56e0aab1
 	
 		default:
 			--i;
