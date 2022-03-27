@@ -21,7 +21,6 @@ int _printf(const char *format, ...)
 	int len = 0;
 	unsigned int ui;
 	char letter;
-	/* char nword[4] = "null"; */ 
 	char *str;
 	char ustr[64];
 
@@ -69,8 +68,8 @@ int _printf(const char *format, ...)
 			break;
 		case 's':
 			str = va_arg(arguments, char *);
-			/* if (str == NULL) */
-				/* print_str(nword, buffer, len); */
+			if (str == NULL)
+				str == "(null)";
 			print_str(str, buffer, len);
 			/* len = _addstr(buffer, str, len); */
 			/* write(1, &str[k], 1);*/
