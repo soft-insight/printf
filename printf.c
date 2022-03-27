@@ -69,7 +69,7 @@ int _printf(const char *format, ...)
 		case 's':
 			str = va_arg(arguments, char *);
 			if (str == NULL)
-				str == "(null)";
+				str = "(null)";
 			/* print_str(str, buffer, len); */
 			len = _addstr(buffer, str, len);
 			/* write(1, &str[k], 1);*/
