@@ -30,7 +30,6 @@ int _printf(const char *format, ...)
 	va_list arguments;
 
 	va_start(arguments, format);
-
 	if (format == NULL)
         return(-1);
 
@@ -69,8 +68,8 @@ int _printf(const char *format, ...)
 		case 's':
 			str = va_arg(arguments, char *);
 			if (str == NULL)
-				return(-1);
-			/*print_str(str, buffer, len);*/
+				str = "(null)";
+			/* print_str(str, buffer, len); */
 			len = _addstr(buffer, str, len);
 			/* write(1, &str[k], 1);*/
 			break;
@@ -105,6 +104,7 @@ int _printf(const char *format, ...)
 			uint_str(ui, ustr, 16);
 			len = _addstr(buffer, ustr, len);
 			break;
+<<<<<<< HEAD
 		case 'X':
 			ui = va_arg(arguments, unsigned int);
                         uint_str3(ui, ustr, 16);
@@ -117,6 +117,13 @@ int _printf(const char *format, ...)
 			len = _addstr(buffer, str, len);
 			break;
 	*/
+=======
+		case '0':
+                        --i;
+                        buffer[len] = format[i];
+                        len++;
+                        break;
+>>>>>>> 71224634cc38d8c9fcdf33d1c0fe51ff56e0aab1
 	
 		default:
 			--i;
