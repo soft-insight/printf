@@ -156,3 +156,31 @@ int print_str(char *str, char buffer[], int len)
 
  }
 
+ void uint_str3(int n, char s[],unsigned int base)
+ {
+         int i;
+         /* num = va_arg(arguments, int);*/
+
+        i = 0;
+
+        do {       /* generate digits in reverse order */
+
+                if(n % base < 10)
+                {
+                        s[i++] = n % base + '0';   /* get next digit */
+                }else
+                {
+                        s[i++] = n % base - 10 + 'A';   /* get next digit */
+                }
+
+        } while ((n /= base) > 0);     /* delete it */
+
+
+
+
+
+     s[i] = '\0';
+     reverse(s);
+
+ }
+

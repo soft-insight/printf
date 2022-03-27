@@ -97,6 +97,7 @@ int _printf(const char *format, ...)
 			adr = va_arg(arguments,long int *);
 			adrr = (uintptr_t)adr;
 			uint_str2(adrr, ustr, 16);
+			len = _addstr(buffer, "0x", len);
 			len = _addstr(buffer, ustr, len);
 			break;
 		case 'x':
@@ -104,6 +105,12 @@ int _printf(const char *format, ...)
 			uint_str(ui, ustr, 16);
 			len = _addstr(buffer, ustr, len);
 			break;
+		case 'X':
+			ui = va_arg(arguments, unsigned int);
+                        uint_str3(ui, ustr, 16);
+                        len = _addstr(buffer, ustr, len);
+                        break;
+
 	/*	case 'r':
 			str = va_arg(arguments, char *);
 			reverse(str);
