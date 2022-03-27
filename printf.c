@@ -30,7 +30,6 @@ int _printf(const char *format, ...)
 	va_list arguments;
 
 	va_start(arguments, format);
-
 	if (format == NULL)
         return(-1);
 
@@ -104,8 +103,7 @@ int _printf(const char *format, ...)
 			uint_str(ui, ustr, 16);
 			len = _addstr(buffer, ustr, len);
 			break;
-
-		 case '0':
+		case '0':
                         --i;
                         buffer[len] = format[i];
                         len++;
