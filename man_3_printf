@@ -28,7 +28,7 @@ one at a time as determined from the value in arg_lis.
 This project _printf () customized was developed by Holberton Students of cohort 17,\
 Jaime Rodríguez, Jesús Macías y Marco Antonio Ordóñez.
 
-This file shows how _printf works, and how to design the proper formatting specification.
+This file shows how printf works, and how to design the proper formatting specification.
 
 .SS Compile
 
@@ -127,7 +127,7 @@ standard output.
 .SH "AUTHOR"
 .SH ""
 
-Jaime Rodrïguez		<4591@holbertonschool.com>
+Jaime Rodrïguez		<4721@holbertonschool.com>
 Jesús Macías		<4588@holbertonschool.com>
 Marco Antonio Ordóñez 	<3917@holbertonschool.com>
 
