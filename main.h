@@ -21,7 +21,4 @@ void uint_str(unsigned int n, char s[], unsigned int base);
 void uint_str2(long int n, char s[],unsigned int base);
 void uint_str3(int n, char s[],unsigned int base);
 
-
-
-
 #endif

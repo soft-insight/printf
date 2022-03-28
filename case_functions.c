@@ -156,7 +156,7 @@ int print_str(char *str, char buffer[], int len)
 
  }
 
- void uint_str3(int n, char s[],unsigned int base)
+void uint_str3(int n, char s[],unsigned int base)
  {
          int i;
          /* num = va_arg(arguments, int);*/
@@ -182,5 +182,5 @@ int print_str(char *str, char buffer[], int len)
      s[i] = '\0';
      reverse(s);
 
- }
+}
 
