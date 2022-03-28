@@ -27,7 +27,7 @@ combination of strings, integers and other different data types.
 
 
 # FLOWCHART #
-<img src="https://github.com/soft-insight/printf/flowchart_printf.png" />
+<img src="https://github.com/soft-insight/printf/blob/master/flowchart_printf.png" />
 
 ### Note ###
 If you want to review the manual of our _printf function you can execute
