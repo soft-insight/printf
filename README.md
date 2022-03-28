@@ -27,7 +27,7 @@ combination of strings, integers and other different data types.
 
 
 # FLOWCHART #
-<img src="https://github.com/soft-insight/printf/under_construction_printf.png" />
+<img src="https://github.com/soft-insight/printf/flowchart_printf.png" />
 
 ### Note ###
 If you want to review the manual of our _printf function you can execute
@@ -39,20 +39,17 @@ $ man ./man_3_printf
 ## Formats ##
 * %c: This type of format is used to represent a character
 * %s: This type of format is used to represent a string of characters
-* %d or %i: This type of format is used to represent base 10
-  signed integer (int)
+* %d or %i: This type of format is used to represent base 10 signed integer (int)
 
 
 # Files of Project
 
-* _printf.c: contains only the main function of our version of printf
-* main.h: is our local library, it contains the public libraries, the different
+* printf.c: contains only the main function of our version of printf
+* main.h: is our local library, it contains the public libraries, the different prototypes
   functions used in our project.
-* PDTE.c: contiene las funciones auxiliares que se están utilizando para
-  las secundarias de nuestro printf (strlen y strcpy)
-* PDTE.c: handles the storage buffer for what the functions are
-  going to print at the end
-* PDTE.c: are all format-specific functions
+* case_functions.c: contiene las funciones auxiliares que se están utilizando para
+  las secundarias de nuestro printf and the format-specific functions
+* man_3_printf: contains the manual of instructions of use our version printf
 
 
 ## Environment ##

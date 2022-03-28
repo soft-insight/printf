@@ -106,20 +106,20 @@ int _printf(const char *format, ...)
 					uint_str(ui, ustr, 16);
 					len = _addstr(buffer, ustr, len);
 					break;
-				
+
 				case 'X':
 					ui = va_arg(arguments, unsigned int);
 					uint_str3(ui, ustr, 16);
 					len = _addstr(buffer, ustr, len);
 					break;
-					
+
 				/* case 'r': */
 				/* 	str = va_arg(arguments, char *); */
 				/* 	reverse(str); */
 				/* 	len = _addstr(buffer, str, len); */
 				/* 	break; */
 
-				
+
 				case '\0':
 					return (-1);
 
