@@ -20,7 +20,7 @@ int _addstr(char buffer[], char s[], int n)
 	while (s[y] != '\0')
 	{
 		buffer[x] = s[y];
-		++;
+		x++;
 		y++;
 	}
 	return (n + y);
